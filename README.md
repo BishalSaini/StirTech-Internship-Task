@@ -76,8 +76,20 @@ twitter-trends-fetcher/
 │
 ├── run.py                   # Entry point for running the app
 ├── requirements.txt         # List of dependencies
-└── README.md                # Project documentation
-```
+└── README.md                # Project documentation 
+``` 
+
+## Screenshot  
+Here are some screenshots of the application in action:
+
+**1. Home Page 
+assets/Home.png
+
+**2. Trends Fetched 
+assets/trend.png
+
+**3. Previous Trend 
+assets/previoustrend.png
 
 ## Contributing
 
