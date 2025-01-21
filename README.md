@@ -1,4 +1,3 @@
-
 # Twitter Trends Fetcher
 
 A web application that fetches the latest Twitter trends and stores them in MongoDB. Users can view the current trends and access previously fetched trends in a dashboard.
@@ -79,17 +78,17 @@ twitter-trends-fetcher/
 └── README.md                # Project documentation 
 ``` 
 
-## Screenshot  
+## Screenshots  
 Here are some screenshots of the application in action:
 
-**1. Home Page 
-assets/Home.png
+1. **Home Page**  
+   ![Home Page](assets/Home.png)
 
-**2. Trends Fetched 
-assets/trend.png
+2. **Trends Fetched**  
+   ![Trends Fetched](assets/trend.png)
 
-**3. Previous Trend 
-assets/previoustrend.png
+3. **Previous Trends**  
+   ![Previous Trends](assets/previoustrend.png)
 
 ## Contributing
 
