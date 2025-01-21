@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block title %}Fetch Trends{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Twitter Trends</h1>
+    
+    <!-- Action Buttons -->
+    <div class="row justify-content-center mb-4">
+        <div class="col-md-6 text-center">
+            <form method="GET" action="/fetch_trends" class="mb-3">
+                <button type="submit" class="btn btn-lg btn-primary w-100">Click Here To Run the Script</button>
+            </form>
+           
+            <form method="GET" action="/dashboard">
+                <button type="submit" class="btn btn-lg btn-secondary w-100">Show Previous Trends</button>
+            </form> 
+        </div>
+    </div>
+
+    <!-- Display Trends -->
+    {% if trends %}
+        <div class="card">
+            <div class="card-header bg-dark text-white">
+                <h5 class="mb-0">Trends Fetched</h5>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>#</th>
+                                <th>Trend</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Request ID</strong></td>
+                                <td>{{object_id}}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>IP Address</strong></td>
+                                <td>{{ip_address}}</td>
+                            </tr>
+                            {% for trend in trends %}
+                            <tr>
+                                <td>{{ loop.index }}</td>
+                                <td>{{ trend }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <div class="alert alert-info text-center mt-4">
+            No trends fetched yet. Click the button above to fetch the latest trends.
+        </div>
+        {% if error %}
+            <div class="alert alert-danger text-center mt-3">
+                {{ error }}
+            </div>
+        {% endif %}
+    {% endif %}
+</div>
+{% endblock %}
